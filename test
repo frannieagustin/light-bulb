@@ -1,0 +1,46 @@
+
+public class Solution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] a = {2,1,3,5,4};//3
+		int[] b = {2,3,4,1,5};//2
+		int[] c = {1,3,4,2,5};//3
+		int[] d = {1,2,3,4,5};//5
+		int[] e = {5,4,3,2,1};//1
+		int[] f = {5,4,1,2,3};//1
+		
+		//solution(a);
+		//solution(b);
+		solution(b);
+		//solution(d);
+		//solution(e);
+	}
+
+	public static int solution(int[] A){
+		int N = A.length;
+		int result = 0;
+		int i = 1;
+		while(i<=N){
+			for(int k=0; k<N; k++){
+				System.out.println("i="+i+" == A[k]="+A[k]);
+				if(i==A[k]){
+					result++;
+					if(i==(k+1)){
+						i=i+1;
+						System.out.println("adjusted 1="+i);
+					}
+					else{
+						i = i+k+1;
+						System.out.println("adjusted 2="+i);
+					}
+					
+					break;
+				}
+			}
+		}
+
+		System.out.println("result="+result);
+		return result;
+	}
+}
